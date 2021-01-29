@@ -1,0 +1,653 @@
+/* 
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Dark Blue (intro and email sign up background): hsl(217, 28%, 15%) - #1c2431
+- Dark Blue (main background): hsl(218, 28%, 13%) - #181f2a
+- Dark Blue (footer background): hsl(216, 53%, 9%) - #0b1523
+- Dark Blue (testimonials background): hsl(219, 30%, 18%) - #202a3c
+
+### Accent
+
+- Cyan (inside call-to-action gradient): hsl(176, 68%, 64%) - #65e2d9
+- Blue (inside call-to-action gradient): hsl(198, 60%, 50%) - #339ecc
+- Light Red (error): hsl(0, 100%, 63%) - #ff4242
+
+### Neutral
+
+- White: hsl(0, 0%, 100%) - #FFFFFF
+
+## Typography
+
+### Body Copy
+
+- Font size: 14px
+
+### Headings, Call-to-actions, Header Navigation
+
+- Family: [Raleway](https://fonts.google.com/specimen/Raleway)
+- Weights: 400, 700
+
+### Body
+
+- Family: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
+- Weights: 400, 700
+*/
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* use rem for sizing -> responsiveness/accessibility */
+
+@font-face {
+  font-family: RalewayRegular;
+  src: url(./fonts/Raleway-Regular.ttf);
+}
+@font-face {
+  font-family: RalewayBold;
+  src: url(./fonts/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: OpenSansRegular;
+  src: url(./fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSansBold;
+  src: url(./fonts/OpenSans-Bold.ttf);
+}
+
+body {
+  font-family: OpenSansRegular;
+  background-color: #181f2a;
+  color: white;
+}
+button {
+  font-family: RalewayBold;
+}
+
+/* Landing page */
+
+/* Header */
+
+header {
+  background-color: #1c2431;
+  color: white;
+}
+.header-container {
+  display: flex;
+  height: 15vh;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex: 2;
+}
+nav {
+  flex: 1;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  font-size: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Introduction */
+
+.introduction {
+  background-image: url(./images/bg-curvy-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  background-color: #1c2431;
+  padding-bottom: 150px;
+}
+.cover {
+  animation: drop 0.5s ease-in;
+  display: flex;
+  justify-content: center;
+  height: 35vh;
+}
+.cover img {
+  height: 100%;
+}
+
+.intro-text {
+  animation: drop 0.5s ease-in;
+  text-align: center;
+}
+.intro-text h1 {
+  font-family: RalewayBold;
+  font-size: 4.8rem;
+  padding: 20px 25% 0px 25%;
+  line-height: 7rem;
+}
+.intro-text p {
+  font-family: RalewayRegular;
+  font-size: 2.4rem;
+  padding: 25px 31%;
+  text-align: center;
+  line-height: 3.7rem;
+}
+.cta {
+  display: flex;
+  justify-content: center;
+}
+.cta-start {
+  animation: drop 1.5s ease-in;
+  background-image: linear-gradient(to right, #65e2d9, #339ecc);
+  border: none;
+  border-radius: 36px;
+  color: white;
+  font-size: 1.8rem;
+  width: 30rem;
+  height: 5rem;
+
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+.cta-start:hover {
+  background-position: right center;
+  cursor: pointer;
+}
+@keyframes drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/* Feature grid */
+
+/* use margins to center and decrease width within div */
+
+.landing-features {
+  background-color: #181f2a;
+  display: grid;
+  grid-template-columns: 15% 1fr 1fr 15%;
+  text-align: center;
+  padding-bottom: 120px;
+}
+
+.landing-features > div > img {
+  margin: 25px;
+}
+.landing-features > div > h3 {
+  font-family: RalewayBold;
+  font-size: 2rem;
+  padding: 0.5rem;
+}
+.landing-features > div > p {
+  font-family: OpenSansRegular;
+  font-size: 1.4rem;
+  margin: 0px 20%;
+}
+.landing-access,
+.landing-collab {
+  grid-column: 2;
+  padding: 30px 20px;
+}
+.landing-access img {
+  padding: 6px;
+}
+.landing-storage img {
+  padding: 4px;
+}
+.landing-security,
+.landing-storage {
+  grid-column: 3;
+  padding: 30px 20px;
+}
+
+/* Explanation */
+.stay-productive {
+  background-color: #181f2a;
+  height: 60vh;
+}
+
+.explanation {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: flex-end;
+  align-items: center;
+}
+.explanation-cover {
+  height: 55vh;
+  margin-right: 0px;
+}
+.explanation-cover img {
+  height: 90%;
+}
+.explanation-text {
+  width: 70%;
+  margin: auto 1px auto auto;
+  justify-self: flex-end;
+}
+.explanation-text h2 {
+  font-size: 4.2rem;
+  font-family: RalewayBold;
+  width: 70%;
+  padding-bottom: 10px;
+}
+.explanation-text p {
+  font-size: 1.8rem;
+  padding: 0.8rem 0rem;
+  width: 95%;
+}
+.explanation-text a {
+  color: #65e2d9;
+  text-underline-offset: 0.8rem;
+}
+.explanation-link a:hover {
+  color: white;
+}
+.explanation-link {
+  display: flex;
+  align-items: center;
+}
+.explanation-link img {
+  padding-left: 3px;
+}
+
+/* get arrow to change to white on hover? */
+
+/* Reviews */
+
+.reviews {
+  background-color: #181f2a;
+  display: flex;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 175px;
+}
+.reviews-bg-quotes {
+  position: absolute;
+  left: 16%;
+  top: 14%;
+  opacity: 0.6;
+  filter: drop-shadow(2px 2px 13px #78fff6);
+  width: 70%;
+}
+/* clip quotationmarks to div so it keeps position relative to .-review-boxes
+-> same width as div it needs to clip to */
+
+.review-boxes {
+  width: 70%;
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+}
+
+.review-box {
+  background-color: #202a3c;
+  max-height: 190px;
+  width: 375px;
+  padding: 30px;
+  border: 1px solid #3a4b69;
+  border-radius: 5px;
+  margin: 25px;
+  box-shadow: 2px 2px 8px #2a374e;
+}
+.review-box p {
+  font-size: 1.4rem;
+}
+.review-box img {
+  height: 25px;
+  border-radius: 30px;
+}
+.profile {
+  margin-top: 15px;
+  display: flex;
+}
+.profile-info {
+  padding-left: 10px;
+}
+.profile p {
+  font-size: 1rem;
+}
+.profile h5 {
+  font-family: RalewayBold;
+  font-size: 1.2rem;
+}
+
+/* How to make sure the boxes are being scaled down properly without the content overflowing? */
+
+/* CTA Bottom */
+
+.early-access {
+  display: flex;
+  justify-content: center;
+  height: 1vh;
+}
+.cta-bottom {
+  text-align: center;
+  width: 45%;
+  background-color: #1c2431;
+  margin: auto;
+  padding: 50px;
+  position: relative;
+  bottom: 150px;
+  box-shadow: 2px 4px 4px black;
+}
+.cta-bottom-text h2 {
+  font-size: 3.4rem;
+  font-family: RalewayBold;
+}
+.cta-bottom-text p {
+  font-size: 1.6rem;
+  padding: 35px;
+  width: 90%;
+  margin: auto;
+}
+.cta-bottom-start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#email {
+  border: none;
+  border-radius: 30px;
+  width: 400px;
+  height: 40px;
+  margin-right: 15px;
+  padding: 0px 10px;
+  font-size: 1.6rem;
+}
+.cta-start-bottom {
+  background-image: linear-gradient(to right, #65e2d9, #339ecc);
+  border: none;
+  border-radius: 36px;
+  color: white;
+  font-size: 1.4rem;
+  width: 20rem;
+  height: 4.2rem;
+
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+.cta-start-bottom:hover {
+  background-position: right center;
+  cursor: pointer;
+}
+/* Footer */
+footer {
+  background-color: #0b1523;
+  padding: 200px 0px 50px 0;
+}
+.footer-container {
+  width: 90%;
+  margin: auto;
+}
+
+.items-container-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+.items-container-footer p {
+  font-size: 1.4rem;
+}
+.location {
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+}
+.location img {
+  margin-right: 10px;
+}
+
+.phone,
+.email {
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+.phone img,
+.email img {
+  margin: 0px 25px 20px 0px;
+}
+
+.nav-footer {
+  display: flex;
+  width: 15%;
+  justify-content: space-between;
+}
+.nav-footer ul {
+  list-style: none;
+}
+.nav-footer li {
+  padding-bottom: 20px;
+}
+.nav-footer a {
+  color: white;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+}
+
+.attribution {
+  text-align: center;
+}
+.attribution a {
+  color: white;
+}
+
+/* Responsive design smaller laptop/tablet */
+
+@media (max-width: 1419px) {
+  .cover {
+    height: 25vh;
+  }
+  .cover img {
+    height: 100%;
+  }
+
+  .intro-text h1 {
+    font-size: 4rem;
+    line-height: normal;
+    padding: 20px 15% 0px 15%;
+  }
+  .intro-text p {
+    font-size: 2rem;
+    padding: 60px 15%;
+    line-height: 3.7rem;
+  }
+
+  .review-box p {
+    font-size: 1.2rem;
+  }
+  .profile-info p {
+    font-size: 1rem;
+  }
+
+  .cta-start-bottom {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 1170px) {
+  .nav-links {
+    font-size: 1.6rem;
+  }
+  .explanation-cover img {
+    height: 80%;
+  }
+  .explanation-cover {
+    display: flex;
+    align-items: center;
+  }
+  .explanation-text h2 {
+    font-size: 3rem;
+  }
+  .explanation-text p {
+    font-size: 1.6rem;
+  }
+  .reviews {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+  }
+  .review-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  .reviews-bg-quotes {
+    left: 360px;
+    top: 50px;
+  }
+  /* How to get these to move with the first review box? */
+
+  #email {
+    width: 50%;
+  }
+}
+
+/* Responsive design mobile */
+@media (max-width: 1100px) {
+  .explanation {
+    flex-direction: column;
+  }
+  .explanation-text {
+    margin: auto;
+  }
+  .reviews {
+    margin: 220px 0px;
+  }
+  .cta-bottom {
+    width: 85%;
+  }
+}
+
+@media (max-width: 623px) {
+  .cover {
+    height: 20vh;
+  }
+  .nav-links {
+    font-size: 1.2rem;
+  }
+  .logo-container {
+    height: 30%;
+  }
+  .intro-text h1 {
+    font-size: 2rem;
+    line-height: normal;
+    padding: 20px 15% 0px 15%;
+  }
+  .intro-text p {
+    font-size: 1.4rem;
+    padding: 70px 15%;
+    line-height: 2.5rem;
+  }
+
+  .introduction {
+    background-image: url(./images/bg-curvy-mobile.svg);
+  }
+
+  .explanation-cover img {
+    height: 80%;
+  }
+  .explanation-cover {
+    display: flex;
+    align-items: center;
+  }
+  .explanation-text h2 {
+    font-size: 1.8rem;
+  }
+  .explanation-text p {
+    font-size: 1.4rem;
+  }
+  .landing-features {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+  .landing-features > div > h3 {
+    font-family: RalewayBold;
+    font-size: 1.6rem;
+    padding: 0.5rem;
+  }
+  .landing-features > div > p {
+    font-family: OpenSansRegular;
+    font-size: 1.4rem;
+    margin: 0px 20%;
+  }
+  .explanation-cover img {
+    height: 60%;
+  }
+  .cta-bottom {
+    padding: 40px 25px;
+  }
+  .cta-bottom-text h2 {
+    font-size: 2.4rem;
+  }
+  .cta-bottom-text p {
+    font-size: 1.4rem;
+    padding: 25px 0px;
+    line-height: 2rem;
+  }
+  .logo-container-footer img {
+    height: 90%;
+  }
+  .logo-container-footer {
+    height: 5vh;
+  }
+
+  .items-container-footer {
+    flex-direction: column;
+  }
+  .location {
+    width: 90%;
+    margin: 0px auto 0px 0px;
+    padding: 0px 0px 20px 0px;
+  }
+  .nav-footer {
+    flex-direction: column;
+    width: 90%;
+    padding: 50px 0px 0px 0px;
+  }
+  .socials {
+    padding: 50px 0px;
+    align-self: center;
+    height: 100%;
+    width: 50%;
+    justify-content: space-around;
+  }
+}
